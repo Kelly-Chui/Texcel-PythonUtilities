@@ -1,6 +1,6 @@
 #
 #   CombineText.py
-#   PythonUtilies
+#   PythonUtilties
 #
 #   Created by Kelly Chui on 2022/09/30
 #
