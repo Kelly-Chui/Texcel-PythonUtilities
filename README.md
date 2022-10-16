@@ -1,5 +1,5 @@
 # PythonUtilities
 
-### Combine Text
+### CombineTexts.py
 
-### 
+### CropDiaglogTexts.py
