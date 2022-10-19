@@ -22,9 +22,9 @@ files = list(filter(lambda x: ".txt" in x, files))
 files.sort(key = lambda x: int(''.join(re.findall(r'\d+', x))))
 
 row = 1
-for filename in files:
+for fileName in files:
     column = 1
-    file = open(loadDirectory + filename)
+    file = open(loadDirectory + fileName)
     for line in file:
         if "=" in line:
             splits = line.split("=")
