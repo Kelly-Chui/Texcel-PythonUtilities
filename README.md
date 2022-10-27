@@ -7,6 +7,7 @@
 - History
 	- Sep 30, 2022: Create Project
 	- Oct 19, 2022: Code Refactoring
+	- Oct 28, 2022: Add UI
 
 ### CropDiaglogTexts.py
 
