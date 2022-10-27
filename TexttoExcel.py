@@ -14,14 +14,14 @@ from tkinter import messagebox
 
 def selectLoadFolder():
     global loadPath
-    loadPath = filedialog.askdirectory(initialdir = "/", title = "폴더선택")
+    loadPath = filedialog.askdirectory(initialdir = "/", title = "Open text data")
     if loadPath == "":
-        tk.messagebox.showwarning("경고", "폴더선택하시오")
+        tk.messagebox.showwarning("Warning!", "It's not a folder.")
     else:
         res = os.listdir(loadPath)
         print(res)
         if len(res) == 0:
-            messagebox.showwarning("경고", "폴더 내 파일 없다")
+            messagebox.showwarning("Warning!", "There are no files inside the folder.")
         else:
             loadPathLabel.config(text=loadPath)
             for file in res:
@@ -29,7 +29,7 @@ def selectLoadFolder():
 
 def selectSaveFolder():
     global savePath
-    savePath = filedialog.askdirectory(initialdir = "/", title = "폴더선택")
+    savePath = filedialog.askdirectory(initialdir = "/", title = "Select a save directory")
     savePathLabel.config(text=savePath)
 def makeExcelFile(savePath):
     files = os.listdir(loadPath)
@@ -80,28 +80,3 @@ savePathLabel.pack()
 proceedButton.pack()
 
 rootView.mainloop()
-
-# resultFile = Workbook()
-# resultFile.remove(resultFile["Sheet"])
-# sheet = resultFile.create_sheet(index = 1, title = "result")
-#
-# loadDirectory = "/Users/KellyChui/Desktop/results/"
-# saveDirectory = "/Users/KellyChui/Desktop/results/"
-# saveFileName = "result"
-#
-# files = os.listdir(loadDirectory)
-# files = list(filter(lambda x: ".txt" in x, files))
-# files.sort(key = lambda x: int(''.join(re.findall(r'\d+', x))))
-#
-# row = 1
-# for fileName in files:
-#     column = 1
-#     file = open(loadDirectory + fileName)
-#     for line in file:
-#         if "=" in line:
-#             splits = line.split("=")
-#             sheet.cell(column, row, float(splits[1].rstrip("\n")))
-#         column += 1
-#     row += 1
-#
-# resultFile.save(saveDirectory + saveFileName + ".xlsx")
