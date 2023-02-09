@@ -6,9 +6,9 @@
 #
 
 import os
-import re
 import webbrowser
 from openpyxl import Workbook
+import natsort
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
@@ -34,12 +34,17 @@ def selectSaveFolder():
     savePathLabel.config(text=savePath)
 
 def makeExcelFile(savePath):
+    resultFile = Workbook()
+    resultFile.remove(resultFile["Sheet"])
+    sheet = resultFile.create_sheet(index = 1, title = "result")
+
     if loadPath == "" or savePath == "":
         messagebox.showwarning("Warning", "Directories must be selected")
         return
     files = os.listdir(loadPath)
     files = list(filter(lambda x: ".txt" in x, files))
-    files.sort(key = lambda x: int(''.join(re.findall(r'\d+', x))))
+    files = natsort.natsorted(files)
+    print(files)
 
     row = 1
     for fileName in files:
@@ -51,6 +56,7 @@ def makeExcelFile(savePath):
                 sheet.cell(column, row, float(splits[1].rstrip("\n")))
             column += 1
         row += 1
+
     resultFile.save(savePath + "/" + "result" + ".xlsx")
     print("end")
     messagebox.showinfo("Complete", "Complete")
@@ -61,8 +67,11 @@ def openExplorer():
 def openURL():
     webbrowser.open("https://github.com/Kelly-Chui/PythonUtilities")
 
-def opensourceURL():
+def openpyxlURL():
     webbrowser.open("https://openpyxl.readthedocs.io/en/stable/")
+
+def openNatsortURL():
+    webbrowser.open("https://github.com/SethMMorton/natsort")
 
 def showAppinfo():
     appInfoView = tk.Toplevel()
@@ -72,17 +81,15 @@ def showAppinfo():
     maker = tk.Label(appInfoView, text = "Made by Kelly Chui")
     githubURL = tk.Button(appInfoView, text = "contact(Website)", command = openURL)
     openSourceLabel = tk.Label(appInfoView, text = "Opensource License")
-    openSourceInfo = tk.Button(appInfoView, text = "openpyxl", command = opensourceURL)
+    openSourceInfo1 = tk.Button(appInfoView, text = "natsort", comman = openNatsortURL)
+    openSourceInfo2 = tk.Button(appInfoView, text = "openpyxl", command = openpyxlURL)
 
     maker.pack(side="top")
     githubURL.pack(side="top")
 
-    openSourceInfo.pack(side="bottom")
+    openSourceInfo1.pack(side="bottom")
+    openSourceInfo2.pack(side="bottom")
     openSourceLabel.pack(side="bottom")
-
-resultFile = Workbook()
-resultFile.remove(resultFile["Sheet"])
-sheet = resultFile.create_sheet(index = 1, title = "result")
 
 rootView = tk.Tk()
 rootView.configure(bg = "white")
@@ -121,5 +128,4 @@ savePathLabel.pack(side = "right")
 proceedButton.pack(side = "top")
 openSaveButton.pack(side = "top")
 infoButton.pack()
-
 rootView.mainloop()
