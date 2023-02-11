@@ -14,7 +14,6 @@
 		- Change sorting Algorithm
 		- Fix WorkBook initialize error
 		- Add OpenSource Depedency(natsort)
-
 - References
 	- [natsort](https://github.com/SethMMorton/natsort)
 	- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
