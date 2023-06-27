@@ -6,13 +6,15 @@
 	- Sep 30, 2022
 		- Create Project
 	- Oct 19, 2022
-		- Bug(file name Out of Order) Fix
+		- Minor bug fix
 	- Oct 28, 2022 
-		- Add UI
+		- Add GUI
 	- Feb 9, 2023 
-		- Change sorting Algorithm
-		- Fix WorkBook initialize error
-		- Add OpenSource Depedency(natsort)
+		- Change sorting algorithm
+		- WorkBook initialize error fix
+		- Adding an Opensource depedency(natsort)
+	- June 27, 2023
+		- Failed data error fix
 - References
 	- [natsort](https://github.com/SethMMorton/natsort)
 	- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)

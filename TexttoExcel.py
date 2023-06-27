@@ -45,7 +45,6 @@ def makeExcelFile(savePath):
     files = list(filter(lambda x: ".txt" in x, files))
     files = natsort.natsorted(files)
     print(files)
-
     row = 1
     for fileName in files:
         column = 1
@@ -53,7 +52,11 @@ def makeExcelFile(savePath):
         for line in file:
             if "=" in line:
                 splits = line.split("=")
-                sheet.cell(column, row, float(splits[1].rstrip("\n")))
+                try: 
+                    cellItem = float(splits[1].rstrip("\n"))
+                except:
+                    cellItem = "failed"
+                sheet.cell(column, row, cellItem)
             column += 1
         row += 1
 
