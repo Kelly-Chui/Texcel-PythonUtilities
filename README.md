@@ -13,7 +13,7 @@
 		- Change sorting algorithm
 		- WorkBook initialize error fix
 		- Adding an Opensource depedency(natsort)
-	- June 27, 2023
+	- Jun 27, 2023
 		- Failed data error fix
 - References
 	- [natsort](https://github.com/SethMMorton/natsort)
