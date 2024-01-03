@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,python,pycharm,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,python,pycharm,macos
 
+### config ###
+.ini
+
 ### macOS ###
 # General
 .DS_Store
