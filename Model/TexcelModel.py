@@ -1,10 +1,12 @@
-# text_to_excel_model.py
 import os
+from datetime import datetime
 from tkinter import messagebox
 
 import natsort
 import pandas as pd
+
 from Model import TexcelConfig
+
 
 class TexcelModel:
     def __init__(self):
@@ -16,15 +18,14 @@ class TexcelModel:
         self.config.save_last_values(save_path, load_path)
 
     def make_excel_file(self):
-
         def extract_number(x):
-            if "vout=" in x:
+            if "=" in x:
                 try:
                     return float(x.split('=')[1])
                 except ValueError:
-                    return "error"
+                    return "failed"
             else:
-                return "error"
+                return "failed"
 
         if self.load_path == "" or self.save_path == "":
             messagebox.showwarning("Notice", "No valid directory has been selected. Please reselect")
@@ -39,6 +40,7 @@ class TexcelModel:
         result_df = pd.concat(df_list, axis=1)
         result_df = result_df.map(extract_number)
 
-        with pd.ExcelWriter(os.path.join(self.save_path, "output.xlsx"), engine='openpyxl') as writer:
+        now = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
+        with pd.ExcelWriter(os.path.join(self.save_path, f"result_{now}.xlsx"), engine="openpyxl") as writer:
             result_df.to_excel(writer, index=False, header=False)
         messagebox.showinfo("info", "Complete")

@@ -1,4 +1,3 @@
-# text_to_excel_view.py
 import tkinter as tk
 from tkinter import filedialog, ttk, messagebox
 from Controller import TexcelController as Controller
@@ -20,25 +19,24 @@ class TexcelView(ttk.Frame):
         # buttons
         load_path_select_button = ttk.Button(load_path_frame, text="..", width=5, command=self.select_load_clicked)
         save_path_select_button = ttk.Button(save_path_frame, text="..", width=5, command=self.select_save_clicked)
-        run_button = ttk.Button(self, text="Run", width=10, command=self.run_clicked)
-        open_explorer_button = ttk.Button(self, text="open result folder", width=10, command=self.open_explorer_clicked)
+        self.run_button = ttk.Button(self, text="Run", width=10, command=self.run_clicked)
+        open_save_button = ttk.Button(self, text="open result folder", width=10, command=self.open_save_clicked)
 
         # button styles
-
         style = ttk.Style()
         style.configure("runButton.TButton", foreground="green", focuscolor="none", padding=(0, 10))
-        run_button.config(style="runButton.TButton")
+        self.run_button.config(style="runButton.TButton")
 
         style.configure("pathLabel.TLabel", background="white", justify="center")
         self.load_path_label.config(style="pathLabel.TLabel")
         self.save_path_label.config(style="pathLabel.TLabel")
-        # layouts
 
-        # main Frame
+        # layouts
         load_path_frame.grid(row=0, column=0)
         save_path_frame.grid(row=1, column=0)
 
-        run_button.grid(row=0, column=1, rowspan=2)
+        self.run_button.grid(row=0, column=1)
+        open_save_button.grid(row=1, column=1)
 
         self.load_path_label.grid(row=0, column=0, padx=5, pady=5)
         load_path_select_button.grid(row=0, column=1, padx=5, pady=5)
@@ -60,5 +58,5 @@ class TexcelView(ttk.Frame):
     def run_clicked(self):
         self.controller.run_clicked()
 
-    def open_explorer_clicked(self):
-        self.controller.open_explorer_clicked()
+    def open_save_clicked(self):
+        self.controller.open_save_clicked()

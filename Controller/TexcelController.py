@@ -1,5 +1,3 @@
-# text_to_excel_controller.py
-import webbrowser
 from tkinter import filedialog
 
 
@@ -10,9 +8,6 @@ class TexcelController:
         self.view = view
         self.view.save_path_label.config(text=self.model.save_path)
         self.view.load_path_label.config(text=self.model.load_path)
-
-    def open_url(self, url):
-        webbrowser.open(url)
 
     def select_load_clicked(self):
         folder_path = filedialog.askdirectory(initialdir="/", title="Open text data")
@@ -42,7 +37,7 @@ class TexcelController:
         self.model.make_excel_file()
         self.view.show_information("Complete", "Complete")
 
-    def open_explorer_clicked(self):
+    def open_save_clicked(self):
         self.open_url("file://" + self.model.save_path.replace("\\", "/"))
 
     def show_app_info(self):

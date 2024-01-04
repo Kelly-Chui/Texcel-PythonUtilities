@@ -10,7 +10,7 @@ class App(tk.Tk):
         super().__init__()
         self.title("Texcel")
         self.geometry("420x100")
-
+        self.resizable(False, False)
         model = Model.TexcelModel()
 
         view = View.TexcelView(self)
