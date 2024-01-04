@@ -20,6 +20,9 @@
   	- Jan 3, 2024
   		- Applying MVC Design Pattern
   		- Replace tk.Label(), tk.Button() with ttk.Label(), ttk.Button()
+  	- Jan 4, 2024
+  		- Fix strip error
+  		- Add open result button
 - References
 	- [natsort](https://github.com/SethMMorton/natsort)
 	- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
