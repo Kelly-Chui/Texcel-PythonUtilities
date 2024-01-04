@@ -1,6 +1,6 @@
 # Texcel
 ### Texcel
-- [Download](https://drive.google.com/file/d/1higai4RnkslojluFTzUIm53vG-oEQRVo/view?usp=sharing)
+- [Download](https://drive.google.com/file/d/16Bj0S0OgBED5KDMbxy29bdaveeb778Lr/view?usp=sharing)
 - Digital Amplifier의 hit rate 결과로 출력된 text 파일을 Excel로 옮겨주는 프로그램
 - History
 	- Sep 30, 2022
@@ -20,6 +20,9 @@
   	- Jan 3, 2024
   		- Applying MVC Design Pattern
   		- Replace tk.Label(), tk.Button() with ttk.Label(), ttk.Button()
+  	- Jan 4, 2024
+  		- Fix strip error
+  		- Add open result button
 - References
 	- [natsort](https://github.com/SethMMorton/natsort)
 	- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
