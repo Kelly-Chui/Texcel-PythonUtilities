@@ -1,10 +1,14 @@
 import configparser
 import os
 
-
 class Config:
     def __init__(self):
-        self.config_file_path = "config.ini"
+        try:
+            if not os.path.exists("C:/Program Files/Texcel"):
+                os.makedirs("C:/Program Files/Texcel")
+        except OSError:
+            print("Error: Failed to create the directory.")
+        self.config_file_path = "C:/Program Files/Texcel/config.ini"
         self.save_path = ""
         self.load_path = ""
         config = configparser.ConfigParser()

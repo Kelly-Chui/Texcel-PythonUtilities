@@ -1,3 +1,4 @@
+import webbrowser
 from tkinter import filedialog
 
 
@@ -36,6 +37,9 @@ class TexcelController:
         self.model.save_path = self.view.save_path.get()
         self.model.make_excel_file()
         self.view.show_information("Complete", "Complete")
+
+    def open_url(self, url):
+        webbrowser.open(url)
 
     def open_save_clicked(self):
         self.open_url("file://" + self.model.save_path.replace("\\", "/"))
