@@ -1,5 +1,5 @@
-# PythonUtilities
-### TexttoExcel.py
+# Texcel
+### Texcel
 - [Download](https://drive.google.com/file/d/1higai4RnkslojluFTzUIm53vG-oEQRVo/view?usp=sharing)
 - Digital Amplifier의 hit rate 결과로 출력된 text 파일을 Excel로 옮겨주는 프로그램
 - History
@@ -12,9 +12,14 @@
 	- Feb 9, 2023 
 		- Change sorting algorithm
 		- WorkBook initialize error fix
-		- Adding an Opensource depedency(natsort)
 	- Jun 27, 2023
 		- Failed data error fix
+  	- Jan 2, 2024
+  	  	- Change project name "Texcel"
+  		- This project no longer uses openpyxl directly but uses pandas.
+  	- Jan 3, 2024
+  		- Applying MVC Design Pattern
+  		- Replace tk.Label(), tk.Button() with ttk.Label(), ttk.Button()
 - References
 	- [natsort](https://github.com/SethMMorton/natsort)
 	- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
