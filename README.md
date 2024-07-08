@@ -30,9 +30,3 @@
 ## References
 - [natsort](https://github.com/SethMMorton/natsort)
 - [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
-
-# Texcel
-## CropDiaglogTexts.py
-- Diablo2의 Dialog를 자동으로 인식하여 잘라주는 프로그램
-- History
-	- Jan 4, 2021: Create Project 
