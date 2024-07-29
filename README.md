@@ -4,29 +4,28 @@
 ## Project History
 ### 2022
 
-- **Sep 30**: Created Project
-- **Oct 19**: Minor Bug Fix
-- **Oct 28**: Added GUI
+- **Sep 30**: 프로젝트 생성
+- **Oct 19**: 마이너 버그 픽스
+- **Oct 28**: GUI 추가
 
 ### 2023
 
 - **Feb 9**:
-  - Changed Sorting Algorithm
-  - Fixed Workbook Initialization Error
-- **Jun 27**: Fixed Data Error
+  - 정렬 알고리즘 변경    
+  - 워크북 초기화 에러 픽스
+- **Jun 27**: 데이터 버그 픽스
 
 ### 2024
 
 - **Jan 2**:
-  - Changed Project Name to "Texcel"
-  - Transitioned from using `openpyxl` to `pandas`
+  - "Texcel"로 프로젝트 이름 변경
+  - `openpyxl`을 더 이상 사용하지 않고 `pandas`를 이용함
 - **Jan 3**:
-  - Applied MVC Design Pattern
-  - Replaced `tk.Label()`, `tk.Button()` with `ttk.Label()`, `ttk.Button()`
+  - MVC 패턴에 맞게 코드 정리
+  - `tk.Label()`, `tk.Button()` 컴포넌트들을 `ttk.Label()`, `ttk.Button()`로 변경
 - **Jan 4**:
-  - Fixed Strip Error
-  - Added Open Result Button
+  - 스트립 에러 픽스
+  - 결과 열기 버튼 추가
 
 ## References
 - [natsort](https://github.com/SethMMorton/natsort)
-- [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
