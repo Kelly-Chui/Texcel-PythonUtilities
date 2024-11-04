@@ -28,6 +28,7 @@ class App(tk.Tk):
         controller = Controller.TexcelController(model, view)
 
         view.set_controller(controller)
+        
 
 if __name__ == '__main__':
     if ctypes.windll.shell32.IsUserAnAdmin():
